@@ -8,7 +8,7 @@ install.packages(c('ggplot2',  'vegan', 'reshape2', 'fossil', 'corrplot', 'dplyr
 ##Open the dataset
 ############################################################################################
 data<-read.csv2("/Users/alinevaz/Documents/R/Metagenomica_cacau/OTU_TABLE_sem_cordados-sem_streptophyta.csv", header=T)
-meta<-read.csv2("/Users/alinevaz/Documents/R/Metagenomica_cacau/metadata_maio_2019.csv", header=T)
+meta<-read.csv2("/Users/alinevaz/Documents/R/Metagenomica_cacau/metadata_cacao_ME.csv", header=T)
 ############################################################################################
 #Organizing the datasets
 # this script refers only to bacteria data
@@ -64,7 +64,7 @@ qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
 col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
 
 require(ggplot2)
-pdf(file = "Figure1.pdf" ,  width = 15, height =8)
+pdf(file = "/Users/alinevaz/Ecology/Figures/Figure1.pdf" ,  width = 15, height =8)
 par(xpd=TRUE)
 par(mfrow=c(1,1))
 par(mar=c(10,10,5,5))
@@ -81,7 +81,7 @@ ggplot(melt_dom0,aes(x=Var1,y=value,fill=factor(Var2)))+
 dev.off()
 
 #############################################################################################
-#Diversity indices  - Figure 3a, 3b, 3c 
+#Diversity indices  - Figure 2
 require(vegan)
 ############################################################################################
 div_bac<-data.frame(data[,-c(1:7)])
@@ -103,7 +103,7 @@ table2<- data.frame(cbind(c("0", "24", "48", "72", "96", "120", "144", "0", "24"
                           c(rep("for", 7), rep("mix", 7)), table))
 colnames(table2) <- c("Time", "Group", "richness", "shannon", "evenness")
 
-pdf(file = "Figure3a.pdf" ,  width = 15, height =8)
+pdf(file = "/Users/alinevaz/Ecology/Figures/Figure3a.pdf" ,  width = 15, height =8)
 ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=richness, group=Group)) +
   geom_line(aes(color = Group))+
   geom_point(aes(color = Group))+
@@ -115,7 +115,7 @@ ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=richness, group
                     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 dev.off()
 
-pdf(file = "Figure3b.pdf" ,  width = 15, height =8)
+pdf(file = "/Users/alinevaz/Ecology/Figures/Figure3b.pdf" ,  width = 15, height =8)
 ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=shannon, group=Group)) +
   geom_line(aes(color = Group))+
   geom_point(aes(color = Group))+
@@ -127,19 +127,7 @@ ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=shannon, group=
                     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 dev.off()
 
-pdf(file = "Figure3c.pdf" ,  width = 15, height =8)
-ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=evenness, group=Group)) +
-  geom_line(aes(color = Group))+
-  geom_point(aes(color = Group))+
-  xlab("Time")+ylab("OTUs")+
-  theme(text = element_text(size = 20), axis.text.x = element_text(angle = 45, hjust = 1))+
-  theme(legend.text = element_text(colour="black", size=10))+
-  theme(text = element_text(size = 20), axis.text.x = element_text(angle = 45, hjust = 1))+
-  theme_bw()+ theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
-                    panel.background = element_blank(), axis.line = element_line(colour = "black"))
-dev.off()
-
-pdf(file = "Figure3c.pdf" ,  width = 15, height =8)
+pdf(file = "/Users/alinevaz/Ecology/Figures/Figure3c.pdf" ,  width = 15, height =8)
 ggplot(data=table2, aes(x=factor(Time, levels = unique(Time)), y=evenness, group=Group)) +
   geom_line(aes(color = Group))+
   geom_point(aes(color = Group))+

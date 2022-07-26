@@ -5,10 +5,15 @@ This work was published at _Food microbiology_ in 2020:
 
 ### Script - Description of the analysis:
 * Most prevalent genus in each sample printed in histogram.
-* Diversity indices shannon, evenness and richness.
+* Diversity indices SHANNON, EVENNESS and RICHNESS.
 * Plots of diversity variation along time.
 
 Packages used: ggplot2, vegan, plyr, reshape2
+
+###FIGURES DESCRIPTION
+* FIGURE 1. Relative abundance of OTUs at bacteria genus level, from FOR and MIX cocoa fermentation, which showed more than 1% relative abundance among Bacteria, in each fermentation stage (0–144 h).
+
+* FIGURE 2. Diversity analysis of fungal and bacterial OTUs at genus level from FOR and MIX fine cocoa fermentation sample groups in each fermentation stage. (blue line: FOR) (red line: MIX). (A) Richness. (B) Shannon Diversity. (C) Evenness. 
 
 ### My scientific production in data science:
   All of my production on Data Science are accessible at this website: https://alinebmv.github.io/Curriculum/
@@ -25,3 +30,14 @@ Este tabalho foi publicado na revista _Food microbiology_ em 2020:
 * Gráficos da variação da diversidade ao longo do tempo.
 
 Pacotes utilizados: ggplot2, vegan, plyr, reshape2
+
+###DESCRIÇÃO DAS FIGURAS
+* FIGURE 1. Abundância relativa de OTUs de bactérias, ao nível de gênero, para fermentação de cacao do tipo FOR e MIX. Na figura são mostradas as OTUs que apresentaram abundância relativa superior à 1%, em cada estágio de fermentação (0–144 h).
+
+* FIGURE 2. Diversity analysis of fungal and bacterial OTUs at genus level from FOR and MIX fine cocoa fermentation sample groups in each fermentation stage. (blue line: FOR) (red line: MIX). (A) Richness. (B) Shannon Diversity. (C) Evenness. 
+
+
+
+
+
+
